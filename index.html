@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title> Encriptador </title>
+
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        
+        <div class="interfaz">
+            <div class="logo">
+                <img src="elementos/logo.png" id="logo">
+            </div>
+           
+            <div class="ingresar-texto">
+                <textarea id="campoIngresar" placeholder="Ingrese el texto aqui"></textarea>
+                <p class="advertencia"> ⓘ Solo letras minúsculas y sin acentos</p>
+                <div class="contenedor_botones">
+                    <button class="botones" id="boton-encriptar">Encriptar</button>
+                    <button class="botones" id="boton-desencriptar">Desencriptar</button>
+                </div>
+            </div>
+            <div class="mostrar-texto">
+                <div class="ningun-mensaje">
+                    <img id="muneco" src="elementos/Muneco.png">
+                    <h1>Ningún mensaje fue encontrado</h1>
+                    <p>Ingresa el texto que desees encriptar o desencriptar</p>
+                </div>
+                <div class="texto-final">
+                    <textarea id="resultado" disabled></textarea>
+                    <button class="botones" id="boton-copiar">Copiar</button>
+                </div>
+            </div>
+        </div>
+        
+        
+    </body>
+</html>
+
+<script>
+    var texto=document.getElementById("campoIngresar");
+    var botonEncriptar=document.getElementById("boton-encriptar");
+    var botonDesencriptar=document.getElementById("boton-desencriptar");
+    var botonCopiar=document.getElementById("boton-copiar");
+    var textareaFinal=document.getElementById("resultado");
+    
+    function imprimir(resultado){
+        document.write(resultado);
+    }
+
+    function copiar(){
+        let copiarTexto=document.getElementById("resultado");
+        copiarTexto.select();
+        document.execCommand("copy");
+    }
+    
+    function borrarImagen(){
+        document.getElementsByClassName("ningun-mensaje")[0].style.display = "none";
+    }
+
+    function mostrarTexto(){
+        document.getElementsByClassName("texto-final")[0].style.display="inline";
+    }
+
+    function textoEncriptado(){
+        borrarImagen();
+        mostrarTexto();
+        var resultado="";
+        var textoSeparado=(texto.value).split("");
+        
+        for(var i=0;i<textoSeparado.length;i++){
+            var letra=textoSeparado[i]
+            if(letra=="a"){
+                letra="ai";
+            }
+            if(letra=="e"){
+                letra="enter";
+            }
+            if(letra=="i"){
+                letra="imes";
+            }
+            if(letra=="o"){
+                letra="ober";
+            }
+            if(letra=="u"){
+                letra="ufat";
+            }
+            resultado=resultado+letra;
+        }
+        document.getElementById("resultado").innerHTML = resultado;
+    }
+
+    function textoDesencriptado(){
+        borrarImagen();
+        mostrarTexto();
+
+        var resultado="";
+        var textoSeparado=(texto.value).split("");
+
+        for(var i=0;i<textoSeparado.length;i++){
+
+            var letra=textoSeparado[i];
+            if(letra=="a"){
+                i++;
+            }else if(letra=="e"){
+                i=i+4;
+            } else if(letra=="i"){
+                i=i+3;
+            } else if(letra=="o"){
+                i=i+3;
+            } else if(letra=="u"){
+                i=i+3;
+            }
+            
+            resultado=resultado+letra;
+            
+        }
+
+        document.getElementById("resultado").innerHTML = resultado;
+    }
+
+    botonEncriptar.onclick=textoEncriptado;
+    botonDesencriptar.onclick=textoDesencriptado;
+    botonCopiar.onclick=copiar;
+
+
+
+</script>
