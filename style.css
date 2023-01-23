@@ -1,0 +1,188 @@
+
+@import url('https://rsms.me/inter/inter.css');
+html { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter var', sans-serif; }
+}
+
+body{
+    background: #F3F5FC;
+    font-family: 'Inter';
+}
+
+body{
+    background: #F3F5FC;
+}
+
+.interfaz{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logo{
+    align-self: start;
+    margin: 3% 0 0 3%;
+}
+
+
+textarea{
+    font-family: 'Inter';
+    outline:none;
+    resize: none;
+    background: none;
+    border:none;
+}
+.ingresar-texto{
+    width: 50%;
+    margin: 6% 5% 0 7%;
+    display:inline-block
+}
+
+#resultado{
+    width: 80%;
+    padding: 32px 32px 0px 32px;
+    font-size: 24px;
+    line-height: 36px;
+    height: 644px;
+    color: #495057;
+}
+
+#campoIngresar{
+    font-weight: 400;
+    font-size: 32px;
+    line-height:48px;
+    color:#0A3871;
+    margin: 5% 0 15% 0;
+    width:100%;
+    height:30rem;
+}
+
+.advertencia{
+    font-size: 12px;
+    opacity: 0.8; 
+    margin-bottom: 1rem;
+    color: #495057;
+}
+.botones{
+    font-family: 'Inter';
+    display:inline-block;
+    width:280px;
+    padding:1.5rem;
+    border-radius: 24px;
+    text-align: center;
+    
+}
+
+#boton-encriptar{
+    background-color:#0A3871;
+    color:white;
+    margin-right:24px;
+    border:  1px solid #0A3871;
+}
+
+#boton-desencriptar{
+    background-color: #D8DFE8;
+    border:  1px solid #0A3871;
+    color:#0A3871
+}
+
+#boton-copiar{
+    background-color: #D8DFE8;
+    border:  1px solid #0A3871;
+    margin-top: 56px;
+    color: #0A3871;
+}
+
+
+.mostrar-texto{
+    float: right;
+    height: 837px;
+    width: 21%;
+    background-color: white;
+    border-radius: 32px;
+    text-align: center;
+    margin-right: 5%;
+    margin-top: 3%;
+}
+
+.texto-final{
+    display: none;
+}
+
+.ningun-mensaje{
+    margin: 0 32px;
+    padding: 50% 0;
+}
+
+.mostrar-texto h1{
+    font-size:24px;
+    font-weight: bold;
+    margin-top:32px;
+    color: #343A40;;
+}
+
+.mostrar-texto p{
+    margin-top:16px;
+    color: #495057;;
+}
+
+@media screen and (max-device-width:1024px){
+    .interfaz{
+        flex-direction: column;
+       
+    }
+
+    .ingresar-texto{
+        width: 90%; 
+        margin:0;
+       
+    }
+
+    #campoIngresar{
+        height: 25rem;
+    }
+    .botones{
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+    .mostrar-texto{
+        width: 90%;
+        height: fit-content;
+        margin: 1.5rem 0;
+    }
+    #muneco{
+        display: none;
+    }
+
+    .ningun-mensaje{
+        padding: 2rem;
+    }
+
+    .mostrar-texto{
+        margin-right: 0px;
+    }
+    .mostrar-texto h1{
+       margin-top: 0px;
+       
+    }
+    #resultado{
+        height: 25rem
+    }
+    #boton-copiar{
+        width: 75%;
+    }
+}
+
+@media screen and (min-device-width:768px) and (max-device-width:1024px){
+    .contenedor_botones{
+        display: flex;
+    }
+}
+
+
+@media (max-device-width:1660px){
+    #muneco{
+        display: none;
+    }
+}
